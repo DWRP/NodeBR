@@ -1,0 +1,24 @@
+{
+  "name": "multdb-pg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha src/tests/postgres.test.js",
+    "test:watch": "node_modules/.bin/mocha src/tests/postgres.test.js -w"
+  },
+  "keywords": [],
+  "author": "Erick Wendel",
+  "contributors": [
+    "Douglas Walas R. Pardim"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "pg": "^8.2.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.21.12"
+  },
+  "devDependencies": {
+    "mocha": "^8.1.1"
+  }
+}
