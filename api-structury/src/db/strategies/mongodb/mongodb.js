@@ -1,5 +1,8 @@
 const ICrud = require('../interfaces/interfaceCrud')
 const Mongoose = require('mongoose');
+const dontenv = require('dotenv')
+
+dontenv.config()
 
 const STATE = {
     0: 'Disconnected',
@@ -18,7 +21,7 @@ module.exports = class MongoDB extends ICrud{
 
     static async connect(){
 
-        await Mongoose.connect('mongodb+srv://dwrp_app_master:Ncpijkpl-1@dwarp.wgmsh.gcp.mongodb.net/heroes?retryWrites=true&w=majority', 
+        await Mongoose.connect(process.env.MONGODB_URI, 
             {
                 useNewUrlParser: true, 
                 useUnifiedTopology: true,   
