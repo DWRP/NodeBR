@@ -1,0 +1,26 @@
+{
+  "name": "multdb-pg-mdb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/mongoDbExample.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha src/tests/*.test.js",
+    "test:watch": "node_modules/.bin/mocha src/tests/*.test.js -w",
+    "test:cov": "npx nyc --check-coverage --instrument --reporter=html --reporter=text npm test"
+  },
+  "keywords": [],
+  "author": "Erick Wendel",
+  "contributors": [
+    "Douglas Walas R. Pardim"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^5.11.14",
+    "pg": "^8.2.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.21.12"
+  },
+  "devDependencies": {
+    "mocha": "^8.1.1"
+  }
+}
