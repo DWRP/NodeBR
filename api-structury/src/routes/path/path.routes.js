@@ -9,6 +9,9 @@ class PathRoutes extends BasicRoute{
         return {
             path: '/',
             method: 'GET',
+            config: {
+                auth: false
+            },
             handler: (request, head) => {
                 return {status: 'running'}
             }

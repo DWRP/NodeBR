@@ -44,12 +44,8 @@ class Postgres extends ICrud{
         return dataValues
     }
 
-    async read(query,skip,limit){
+    async read(query,skip=0,limit=10){
         
-        query = !query.name?{}:query
-        skip = skip?parseInt(skip):0
-        limit = limit?parseInt(limit):10
-
         return await this._schema.findAll({
             where: query,
             raw: true,
@@ -58,8 +54,10 @@ class Postgres extends ICrud{
         })
     }
 
-    async update(id,data){
-        return await this._schema.update(data, { where: { id }})
+    async update(id,data, upsert = false){
+        const fn = upsert ? 'upsert' : 'update'
+        console.log(fn)
+        return await this._schema[fn](data, { where: { id }})
     }
 
     async delete(id){

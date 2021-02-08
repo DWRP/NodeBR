@@ -46,12 +46,14 @@ describe('Postgres Strategy', function (){
 
     it('Update a hero',async ()=>{
         const [itemUpdate] = await context.read({name:MOCK_UPDATE_HERO.name})
+
         const newItem = {
             ...MOCK_UPDATE_HERO,
             name: 'Superman'
         }
+        
         await context.update(itemUpdate.id, newItem)
-
+        
         const [result] = await context.read({id: itemUpdate.id})
 
         assert.deepStrictEqual(result.name, newItem.name)
